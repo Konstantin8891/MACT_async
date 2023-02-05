@@ -6,6 +6,8 @@
 
 FastAPI
 
+PostgreSQL
+
 SQLAlchemy
 
 Alembic
