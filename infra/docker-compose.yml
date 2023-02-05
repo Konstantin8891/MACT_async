@@ -10,8 +10,6 @@ services:
       - .:/app
     ports:
       - 8000:8000
-    # environment:
-    #   - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
     env_file:
       - ../back/.env
     depends_on:
