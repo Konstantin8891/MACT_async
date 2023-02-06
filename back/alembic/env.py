@@ -1,20 +1,27 @@
+import os
+
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+from dotenv import load_dotenv
 
 import models
 
 
+load_dotenv()
+
 config = context.config
+config.set_main_option("sqlalchemy.url", os.getenv("sqlalchemy_url"))
 fileConfig(config.config_file_name)
 target_metadata = models.Base.metadata
 
 
 def run_migrations_offline() -> None:
     url = config.get_main_option("sqlalchemy.url")
+    # url = config.get_main_option("sqlalchemy.url", os.getenv("sqlalchemy_url"))
     context.configure(
         url=url,
         target_metadata=target_metadata,
