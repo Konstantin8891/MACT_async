@@ -21,7 +21,6 @@ target_metadata = models.Base.metadata
 
 def run_migrations_offline() -> None:
     url = config.get_main_option("sqlalchemy.url")
-    # url = config.get_main_option("sqlalchemy.url", os.getenv("sqlalchemy_url"))
     context.configure(
         url=url,
         target_metadata=target_metadata,
