@@ -33,3 +33,7 @@ docker-compose exec web python fullfill_db_correct.py
 Лог обработанные проектов находится в code/nec-urls.txt
 
 localhost:8000/docs
+
+### Содержимое файла с переменными окружения
+
+SQLALCHEMY_DATABASE_URL - например, postgresql://postgres:postgres@db/postgres
