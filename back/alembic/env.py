@@ -14,7 +14,7 @@ import models
 load_dotenv()
 
 config = context.config
-config.set_main_option("sqlalchemy.url", os.getenv("sqlalchemy_url"))
+config.set_main_option("sqlalchemy.url", os.getenv("SQLALCHEMY_DATABASE_URL"))
 fileConfig(config.config_file_name)
 target_metadata = models.Base.metadata
 
